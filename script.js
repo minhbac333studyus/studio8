@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
                return state.savedText;
             },
             getState: function () {
-               return JSON,stringify(state);
+               return JSON.stringify(state);
             },
             saveNewText: function (newText) {
                state.savedText = newText;
@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('#text-changes-made').textContent = textKeeper.getNumChangesMade();
          }
          // WRITE CODE FOR THE CONTROLLER HERE
-         document.addEventListener('input',function () {
-            textKeeper.saveNewText('textKeeper.getSavedText()');
+         document.querySelector('#text-input').addEventListener('input',function () {
+            textKeeper.saveNewText(document.querySelector('#text-input').value);
             updateTextKeeper();
          }, false);
          // WRITE CODE TO GET THINGS STARTED HERE
